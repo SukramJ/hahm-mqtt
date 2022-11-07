@@ -1,0 +1,8 @@
+aiohttp>=3.8.1
+voluptuous>=0.12.2
+python-slugify>=4.0.1
+pydevccu>=0.1.3
+pytest>=6.2.5
+pip>=21.0
+paho-mqtt>=1.6.1
+hahomematic>=2022.11.0

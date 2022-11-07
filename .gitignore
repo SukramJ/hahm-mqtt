@@ -127,3 +127,26 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+*.pyc
+*.xml
+*.json
+*.tar.gz
+
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+
+# Tox stuff, lint
+/.tox/
+/.pylint.d/
+/*_mj.py
+/.idea/*
+build
+
+unignore
+venv
+hahmmqtt/example_mj.py

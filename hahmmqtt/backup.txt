@@ -1,0 +1,35 @@
+ATTR_ADDRESS,
+ATTR_DEVICE_TYPE,
+ATTR_FIRMWARE,
+ATTR_INTERFACE,
+ATTR_INTERFACE_ID,
+ATTR_NAME,
+ATTR_ROOM,
+ATTR_SUBTYPE,
+
+
+
+s@property
+def device_values(self) -> dict[int, dict[str, dict[str, Any]]]:
+    """Return the device data."""
+    device_data: dict[int, dict[str, dict[str, Any]]] = {}
+    for entity in self.entities.values():
+        channel_no = entity.channel_no
+        if channel_no not in device_data:
+            device_data[channel_no] = {}
+        device_data[channel_no][entity.parameter] = entity.entity_values
+    return device_data
+
+@property
+def device_config(self) -> dict[str, Any]:
+    """Return the device data."""
+    return {
+        ATTR_NAME: self.name,
+        ATTR_ADDRESS: self.device_address,
+        ATTR_DEVICE_TYPE: self.device_type,
+        ATTR_SUBTYPE: self.sub_type,
+        ATTR_INTERFACE: self.interface,
+        ATTR_INTERFACE_ID: self.interface_id,
+        ATTR_FIRMWARE: self.firmware,
+        ATTR_ROOM: self.room,
+    }
